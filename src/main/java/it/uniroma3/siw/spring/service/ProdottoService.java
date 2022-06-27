@@ -15,7 +15,7 @@ import it.uniroma3.siw.spring.repository.ProdottoRepository;
 public class ProdottoService {
 	
 	@Autowired
-	private ProdottoRepository prodottoRepository; 
+	private ProdottoRepository prodottoRepository;
 	
 	@Transactional
 	public Prodotto inserisci(Prodotto prodotto) {

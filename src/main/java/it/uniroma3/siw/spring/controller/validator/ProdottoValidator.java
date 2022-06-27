@@ -1,6 +1,5 @@
 package it.uniroma3.siw.spring.controller.validator;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +11,9 @@ import org.springframework.validation.Validator;
 import it.uniroma3.siw.spring.model.Prodotto;
 import it.uniroma3.siw.spring.service.ProdottoService;
 
-
 @Component
 public class ProdottoValidator implements Validator {
+	
 	@Autowired
 	private ProdottoService prodottoService;
 	
