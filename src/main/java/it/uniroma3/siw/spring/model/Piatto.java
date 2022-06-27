@@ -60,5 +60,23 @@ public class Piatto {
 	public void setIngredienti(List<Ingrediente> ingredienti) {
 		this.ingredienti = ingredienti;
 	}
+	
+	@Override
+	public int hashCode() {
+		return this.getNome().hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		
+		Piatto altroPiatto = (Piatto)obj;
+		return this.getNome().equals(altroPiatto.getNome());
+	}
 
 }

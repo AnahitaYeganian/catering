@@ -73,4 +73,22 @@ public class Buffet {
 		this.piatti = piatti;
 	}
 
+	@Override
+	public int hashCode() {
+		return this.getNome().hashCode() + this.getChef().hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		
+		Buffet altroBuffet = (Buffet)obj;
+		return this.getNome().equals(altroBuffet.getNome()) && this.getChef().equals(altroBuffet.getChef());
+	}
+	
 }

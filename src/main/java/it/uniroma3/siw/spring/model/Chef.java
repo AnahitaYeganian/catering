@@ -69,4 +69,22 @@ public class Chef {
 		this.buffets = buffets;
 	}
 	
+	@Override
+	public int hashCode() {
+		return this.getNome().hashCode() + this.getCognome().hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		
+		Chef altroChef = (Chef)obj;
+		return this.getNome().equals(altroChef.getNome()) && this.getCognome().equals(altroChef.getCognome());
+	}
+	
 }

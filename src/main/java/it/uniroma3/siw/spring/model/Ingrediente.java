@@ -54,4 +54,22 @@ public class Ingrediente {
 		this.descrizione = descrizione;
 	}
 	
+	@Override
+	public int hashCode() {
+		return this.getNome().hashCode() + this.getOrigine().hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		
+		Ingrediente altroIngrediente = (Ingrediente)obj;
+		return this.getNome().equals(altroIngrediente.getNome()) && this.getOrigine().equals(altroIngrediente.getOrigine());
+	}
+	
 }
