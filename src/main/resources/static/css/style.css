@@ -1,0 +1,20 @@
+nav {
+	height: 75px;
+	background-color: royalblue;
+}
+
+header {
+	height: 400px;
+	background-color: lightskyblue;
+}
+
+section {
+	margin: 75px 100px;
+	height: 500px;
+	background-color: grey;
+}
+
+footer {
+	height: 100px;
+	background-color: black;
+}
