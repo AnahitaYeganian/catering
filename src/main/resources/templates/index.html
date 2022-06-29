@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="utf-8">
-		<title>Pagina principale</title>
-		<link th:href="@{/css/style.css}" rel="stylesheet">
-	</head>
-	<body>
-		<nav></nav>
+	<head th:replace="fragments/base.html::head(title='Home Page')"></head>
+	
+	<body
+		<nav th:replace="fragments/base.html::navbar"></nav>
 		
-		<header></header>
-		
-		<section>
+		<section th:replace="fragments/base.html::section">
 			<div id="flex-container">
 			</div>
 		</section>
 		
-		<footer></footer>
+		<footer th:replace="fragments/base.html::footer"></footer>
+	
 	</body>
 </html>

@@ -1,20 +1,36 @@
-nav {
-	height: 75px;
-	background-color: royalblue;
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: white;
 }
 
-header {
-	height: 400px;
-	background-color: lightskyblue;
-}
-
-section {
-	margin: 75px 100px;
-	height: 500px;
-	background-color: grey;
-}
-
-footer {
-	height: 100px;
+#flex-container {
 	background-color: black;
+	height: 75px;
+	margin: 0px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.flex-item {
+	list-style: none;
+	margin-right: 2rem;
+	
+}
+
+.flex-item a {
+	text-decoration: none;
+	color: white;
+	
+}
+
+.flex-item:first-child {
+	margin-right: auto;
+	margin-left: -1rem;
+}
+
+#logo {
+	height: 70px;
+	width: 70px;
+	margin-bottom: -4px;
 }
