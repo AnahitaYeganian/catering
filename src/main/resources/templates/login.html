@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta content="width=device-width, initial-scale=1.0"/>
+		<title>Form Login</title>
+		<link th:href="@{/css/login.css}" rel="stylesheet"/>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+	</head>
+	
+	<body>
+		<div id="flex-container">
+			<form th:action="@{/login}" method="POST" id="form">
+				<h2>SIGN IN</h2>
+				<input type="text" name="username" class="box" placeholder="Inserisci username" required />
+				<input name="password" type="password" class="box" placeholder="Inserisci password" required />
+				<button type="submit" id="submit">LOGIN</button>
+				<a href="registrazione.html">Registrati</a>
+			</form>
+		</div>
+	</body>
+</html>

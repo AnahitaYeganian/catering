@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head th:replace="fragments/base.html::head(title='Home Page')"></head>
+	<head th:replace="fragments/base.html::head(title='Home Page')">
+		<link th:href="@{/css/style.css}" rel="stylesheet"/>
+	</head>
 	
 	<body
 		<nav th:replace="fragments/base.html::navbar"></nav>
