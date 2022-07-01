@@ -4,31 +4,26 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import it.uniroma3.siw.spring.model.User;
+
 @Controller
 public class MainController {
 	
+	//@GetMapping({"/", "index"})
 	@GetMapping("/")
-	public String login(Model model) {
-			return "login.html";
+	public String mostraFormLogin() {
+		return "index.html";
 	}
 	
 	@GetMapping("registrazione")
-	public String registrazione(Model model) {
-			return "registrazione.html";
+	public String mostraFormRegistrazione(Model model) {
+		model.addAttribute("user", new User());
+		return "registrazione.html";
 	}
 	
 	@GetMapping("login")
-	public String tornaAllaPaginaDiLogin(Model model) {
-			return "login.html";
+	public String tornaAllaPaginaDiLogin() {
+		return "login.html";
 	}
 	
-	@GetMapping("confermaLogin")
-	public String confermaLogin(Model model) {
-			return "";
-	}
-	
-	@GetMapping("confermaRegistrazione")
-	public String confermaRegistrazione(Model model) {
-			return "";
-	}
 }

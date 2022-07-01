@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 //@Table(uniqueConstraints=@UniqueConstraint(columnNames={"nome","chef"}))
@@ -20,7 +21,8 @@ public class Buffet {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Column(unique = true, nullable = false)
+	@Column(unique = true)
+	@NotBlank
 	private String nome;
 	
 	private String descrizione;

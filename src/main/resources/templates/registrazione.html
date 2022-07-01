@@ -12,16 +12,16 @@
 	
 	<body>
 		<div id="flex-container">
-			<form th:action="@{/registrazione}" method="POST" id="form">
+			<form th:action="@{/confermaRegistrazione}" method="POST" th:object="${user}" id="form">
 				<h2>USER REGISTRATION</h2>
 				<h4>Nome</h4>
-				<input type="text" name="nome" class="box" placeholder="Inserisci nome" required />
+				<input type="text" th:field="*{nome}" name="nome" class="box" placeholder="Inserisci nome" required />
 				<h4>Cognome</h4>
-				<input type="text" name="cognome" class="box" placeholder="Inserisci cognome" required />
+				<input type="text" th:field="*{cognome}" name="cognome" class="box" placeholder="Inserisci cognome" required />
 				<h4>Username</h4>
-				<input type="text" name="username" class="box" placeholder="Inserisci username" required />
+				<input type="text" th:field="*{username}"name="username" class="box" placeholder="Inserisci username" required />
 				<h4>Password</h4>
-				<input name="password" type="password" class="box" placeholder="Inserisci password" required />
+				<input name="password" th:field="*{password}" type="password" class="box" placeholder="Inserisci password" required />
 				<button type="submit" id="submit">REGISTRATI</button>
 				<a th:href="@{/login}">Login</a>
 			</form>

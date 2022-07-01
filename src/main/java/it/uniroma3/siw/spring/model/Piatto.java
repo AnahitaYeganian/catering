@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Piatto {
@@ -18,7 +19,8 @@ public class Piatto {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Column(unique=true, nullable = false)
+	@Column(unique=true)
+	@NotBlank
 	private String nome;
 	
 	private String descrizione;

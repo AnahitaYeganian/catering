@@ -1,20 +1,18 @@
 package it.uniroma3.siw.spring.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(uniqueConstraints=@UniqueConstraint(columnNames={"nome","cognome"}))
-public class Chef {
+public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,14 +24,24 @@ public class Chef {
 	@NotBlank
 	private String cognome;
 	
-	private String nazionalita;
+	@NotBlank
+	@Column(unique = true)
+	private String username;
 	
-	@OneToMany(mappedBy = "chef")
-	private List<Buffet> buffets;
+	@NotBlank
+	@Size(max = 8)
+	private String password;
 	
-	public Chef() {
-		this.buffets = new ArrayList<Buffet>();
+	public User() {
+		
 	}
+	
+//	public User(String nome, String cognome, String username, String password) {
+//		this.nome = nome;
+//		this.cognome = cognome;
+//		this.username = username;
+//		this.password = password;
+//	}
 
 	public Long getId() {
 		return this.id;
@@ -59,25 +67,25 @@ public class Chef {
 		this.cognome = cognome;
 	}
 
-	public String getNazionalita() {
-		return this.nazionalita;
+	public String getUsername() {
+		return this.username;
 	}
 
-	public void setNazionalita(String nazionalita) {
-		this.nazionalita = nazionalita;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	public List<Buffet> getBuffets() {
-		return this.buffets;
+	public String getPassword() {
+		return this.password;
 	}
 
-	public void setBuffets(List<Buffet> buffets) {
-		this.buffets = buffets;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	@Override
 	public int hashCode() {
-		return this.getNome().hashCode() + this.getCognome().hashCode();
+		return this.getUsername().hashCode();
 	}
 
 	@Override
@@ -89,8 +97,8 @@ public class Chef {
 		if (getClass() != obj.getClass())
 			return false;
 		
-		Chef altroChef = (Chef)obj;
-		return this.getNome().equals(altroChef.getNome()) && this.getCognome().equals(altroChef.getCognome());
+		User altroUser = (User)obj;
+		return this.getUsername().equals(altroUser.getUsername());
 	}
-	
+
 }
