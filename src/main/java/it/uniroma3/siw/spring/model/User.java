@@ -1,6 +1,5 @@
 package it.uniroma3.siw.spring.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,10 +7,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 @Entity
-@Table(uniqueConstraints=@UniqueConstraint(columnNames={"nome","cognome"}))
+@Table(name = "users", uniqueConstraints=@UniqueConstraint(columnNames={"nome","cognome"}))
 public class User {
 	
 	@Id
@@ -23,14 +21,6 @@ public class User {
 	
 	@NotBlank
 	private String cognome;
-	
-	@NotBlank
-	@Column(unique = true)
-	private String username;
-	
-	@NotBlank
-	@Size(max = 8)
-	private String password;
 	
 	public User() {
 		
@@ -66,26 +56,10 @@ public class User {
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
 	}
-
-	public String getUsername() {
-		return this.username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
 	
 	@Override
 	public int hashCode() {
-		return this.getUsername().hashCode();
+		return this.getNome().hashCode()+this.getCognome().hashCode();
 	}
 
 	@Override
@@ -98,7 +72,7 @@ public class User {
 			return false;
 		
 		User altroUser = (User)obj;
-		return this.getUsername().equals(altroUser.getUsername());
+		return this.getNome().equals(altroUser.getNome()) && this.getCognome().equals(altroUser.getCognome());
 	}
 
 }

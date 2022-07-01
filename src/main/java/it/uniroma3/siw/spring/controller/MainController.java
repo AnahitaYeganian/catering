@@ -15,15 +15,4 @@ public class MainController {
 		return "index.html";
 	}
 	
-	@GetMapping("registrazione")
-	public String mostraFormRegistrazione(Model model) {
-		model.addAttribute("user", new User());
-		return "registrazione.html";
-	}
-	
-	@GetMapping("login")
-	public String tornaAllaPaginaDiLogin() {
-		return "login.html";
-	}
-	
 }

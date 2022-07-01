@@ -2,6 +2,7 @@ package it.uniroma3.siw.spring.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -26,7 +27,7 @@ public class UserService {
 		return userRepository.findById(id).get();
 	}
 	
-	public List<User> findAll() {
+	public List<User> findAllUsers() {
 		List<User> users = new ArrayList<User>();
 		
 		for(User u: userRepository.findAll())

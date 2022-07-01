@@ -19,9 +19,9 @@
 				<h4>Cognome</h4>
 				<input type="text" th:field="*{cognome}" name="cognome" class="box" placeholder="Inserisci cognome" required />
 				<h4>Username</h4>
-				<input type="text" th:field="*{username}"name="username" class="box" placeholder="Inserisci username" required />
+				<input type="text" th:field="{credentials.username}"name="username" class="box" placeholder="Inserisci username" required />
 				<h4>Password</h4>
-				<input name="password" th:field="*{password}" type="password" class="box" placeholder="Inserisci password" required />
+				<input name="password" th:field="{credentials.password}" type="password" class="box" placeholder="Inserisci password" required />
 				<button type="submit" id="submit">REGISTRATI</button>
 				<a th:href="@{/login}">Login</a>
 			</form>
