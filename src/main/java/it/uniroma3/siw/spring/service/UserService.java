@@ -2,7 +2,6 @@ package it.uniroma3.siw.spring.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -18,22 +17,33 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
+	@Autowired
+	private CredentialsService credentialsService;
+	
 	@Transactional // Operazione di aggiornamento dei dati nel DB
-	public void save(User user) {
+	public void saveUser(User user) {
 		this.userRepository.save(user);
 	}
 	
-	public User findById(Long id) {
-		return userRepository.findById(id).get();
+	public User getUser(Long id) {
+		return this.userRepository.findById(id).get();
 	}
 	
-	public List<User> findAllUsers() {
+	public List<User> getAllUsers() {
 		List<User> users = new ArrayList<User>();
 		
-		for(User u: userRepository.findAll())
+		for(User u: this.userRepository.findAll())
 			users.add(u);
 		
 		return users;
+	}
+	
+	public CredentialsService getCredentialsService() {
+		return this.credentialsService;
+	}
+	
+	public User getUserByUsername(String username) {
+		return this.credentialsService.findByUsername(username).get().getUser();
 	}
 
 }

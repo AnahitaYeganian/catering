@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head th:replace="fragments/base.html::head(title='Home Page')">
-		<link th:href="@{/css/style.css}" rel="stylesheet"/>
-	</head>
+	<head th:replace="fragments/base.html::head(title='Home Page')"></head>
 	
-	<body
-		<nav th:replace="fragments/base.html::navbar"></nav>
+	<body>
+		<header th:replace="fragments/base.html::header"></header>
 		
-		<section th:replace="fragments/base.html::section">
-			<div id="flex-container">
-			</div>
-		</section>
+		<section th:replace="fragments/base.html::section"></section>
 		
 		<footer th:replace="fragments/base.html::footer"></footer>
 	

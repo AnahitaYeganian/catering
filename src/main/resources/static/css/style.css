@@ -3,16 +3,19 @@
 }
 
 body {
-	background-color: white;
+	background-color: coral;
 }
 
-#flex-container {
-	background-color: black;
-	height: 75px;
-	margin: 0px;
+#navbar-container {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+	background-color: white;
+	height: 75px;
+	margin: 5px;
+	margin-left: -5px;
+	border: 3px solid black;
+	box-shadow: 10px 10px black;
 }
 
 .flex-item {
@@ -23,7 +26,8 @@ body {
 
 .flex-item a {
 	text-decoration: none;
-	color: white;
+	color: black;
+	font-weight: bold;
 	
 }
 
