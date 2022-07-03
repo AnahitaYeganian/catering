@@ -72,7 +72,6 @@ public class AuthenticationController {
             credentials.setUser(user);
             credentialsService.saveCredentials(credentials);
             model.addAttribute("registrazioneAvvenuta", new String("L'utente inserito è stato registrato"));
-            //<div th:text="${registrazioneAvvenuta}">L'utente inserito è stato registrato</div>
             return "registrationForm.html";
         }
       //DIRE CHE REGISTRAZIONE NON è AVVENUTA PER ERRORI NELLA PAGINA HTML model.addAttribute("registrazioneNonAvvenuta", model);
