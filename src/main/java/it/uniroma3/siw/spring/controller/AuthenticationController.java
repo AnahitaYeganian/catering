@@ -72,7 +72,7 @@ public class AuthenticationController {
             credentials.setUser(user);
             credentialsService.saveCredentials(credentials);
             model.addAttribute("registrazioneAvvenuta", new String("L'utente inserito è stato registrato"));
-            return "registrationForm.html";
+            return "loginForm.html";
         }
       //DIRE CHE REGISTRAZIONE NON è AVVENUTA PER ERRORI NELLA PAGINA HTML model.addAttribute("registrazioneNonAvvenuta", model);
         return "registrationForm.html";
