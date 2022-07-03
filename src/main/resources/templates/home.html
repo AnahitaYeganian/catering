@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-	</head>
+	<head th:replace="fragments/baseUser.html::head(title='Home Page User')"></head>
 	
 	<body>
-		<h1>PAGINA UTENTE</h1>
+		<header th:replace="fragments/baseUser.html::header"></header>
+		
+		<section th:replace="fragments/baseUser.html::section"></section>
+		
+		<footer th:replace="fragments/baseUser.html::footer"></footer>
+	
 	</body>
 </html>
