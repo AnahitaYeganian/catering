@@ -26,7 +26,7 @@ public class Piatto {
 	private String descrizione;
 	
 	@OneToMany
-	@JoinColumn(name = "ingrediente_id")
+	@JoinColumn(name = "piatto_id")
 	private List<Ingrediente> ingredienti;
 	
 	public Piatto() {

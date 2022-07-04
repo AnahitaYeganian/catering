@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/baseUser.html::head(title='Chef')"></head>
+	
+	<body>
+		<header th:replace="fragments/baseUser.html::header"></header>
+		
+		<div id="section">
+			<div class="card">
+				<img th:src="@{'/images' + '/' + ${chef.nome} + ${chef.cognome} + '.jpg'}" alt="Avatar" style="width:100%">
+				
+				<div class="container">
+    				<h4><b th:text="${chef.nome} + ' '+ ${chef.cognome}"></b ></h4>
+    				<p th:text="${chef.nazionalita}"></p > 
+    				<p>Chef</p>
+    			</div>
+			</div>
+		</div>
+	
+	</body>
+</html>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head th:replace="fragments/baseUser.html::head(title='Home Page User')"></head>
+	<head th:replace="fragments/baseUser.html::head(title='User Home Page')"></head>
 	
 	<body>
 		<header th:replace="fragments/baseUser.html::header"></header>
 		
-		<section th:replace="fragments/baseUser.html::section"></section>
-		
-		<footer th:replace="fragments/baseUser.html::footer"></footer>
+		<div>
+			<div><a th:href="@{/buffet}">Visualizza buffets</a></div>
+		</div>
 	
 	</body>
 </html>
