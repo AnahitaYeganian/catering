@@ -5,9 +5,11 @@
 	<body>
 		<header th:replace="fragments/baseUser.html::header"></header>
 		
-		<div>
-			<div><a th:href="@{/buffet}">Visualizza buffets</a></div>
-		</div>
+		<div id="section-container">
+			<a class="section-items" th:href="@{/buffet}">Visualizza buffets</a>
+			<a class="section-items" th:href="@{/buffet}">Modifica dati personali</a>
+			<a class="section-items" th:href="@{/buffet}">Inserisci</a >
+		</div >
 	
 	</body>
 </html>

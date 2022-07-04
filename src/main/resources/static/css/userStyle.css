@@ -138,3 +138,27 @@ body {
 .container {
 	padding: 2px 16px;
 }
+
+#section-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 9rem;
+	height: 300px;
+	width: 500px;
+	background-color: white;
+	border: 2px solid black;
+	box-shadow: 15px 15px black;
+}
+
+.section-items {
+	margin-top: 2rem;
+	text-decoration: none;
+	color: black;
+}
+
+#section-container a:hover {
+	color: firebrick;
+}
