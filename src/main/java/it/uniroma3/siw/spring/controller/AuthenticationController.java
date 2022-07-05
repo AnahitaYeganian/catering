@@ -1,5 +1,7 @@
 package it.uniroma3.siw.spring.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,9 +50,21 @@ public class AuthenticationController {
 	}
 	
 	@GetMapping("/default")
-    public String defaultAfterLogin(Model model) {
+    public String defaultAfterLogin(Model model, HttpServletRequest request) {
     	UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     	Credentials credentials = credentialsService.getCredentials(userDetails.getUsername());
+    	
+//    	session.setAttribute("userId", credentials.getUser().getId());
+//    	session.setAttribute("credentialsId", credentials.getId());
+    	
+    	model.addAttribute("userId", credentials.getUser().getId());
+    	model.addAttribute("credentialsId", credentials.getId());
+    	
+    	HttpSession session = request.getSession(true);
+    	
+    	session.setAttribute("currentUser", credentials.getUser());
+    	session.setAttribute("currentCredentials", credentials);
+    	
     	if (credentials.getRole().equals(Credentials.ADMIN_ROLE)) {
             return "admin/home.html";
         }

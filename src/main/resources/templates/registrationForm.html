@@ -16,7 +16,7 @@
 				<h2>USER REGISTRATION</h2>
 				<h4>Nome</h4>
 				<input type="text" th:field="${user.nome}" name="nome" class="box" placeholder="Inserisci nome" required />
-				<div th:if="${#fields.hasErrors('user.nome')}" th:errors="${usern.nome}" th:style="'color:red'"></div>
+				<div th:if="${#fields.hasErrors('user.nome')}" th:errors="${user.nome}" th:style="'color:red'"></div>
 				<h4>Cognome</h4>
 				<input type="text" th:field="${user.cognome}" name="cognome" class="box" placeholder="Inserisci cognome" required />
 				<div th:if="${#fields.hasErrors('user.cognome')}" th:errors="${user.cognome}" th:style="'color:red'"></div>

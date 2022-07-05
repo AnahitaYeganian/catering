@@ -6,9 +6,9 @@
 		<header th:replace="fragments/baseUser.html::header"></header>
 		
 		<div id="section-container">
+			<h2>User Menu</h2>
 			<a class="section-items" th:href="@{/buffet}">Visualizza buffets</a>
-			<a class="section-items" th:href="@{/buffet}">Modifica dati personali</a>
-			<a class="section-items" th:href="@{/buffet}">Inserisci</a >
+			<a class="section-items" th:href="@{'/updateUser' + '/' + ${userId}}">Modifica dati personali</a>
 		</div >
 	
 	</body>

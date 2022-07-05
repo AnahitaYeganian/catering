@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/baseUser.html::head(title='User Details')"></head>
+	
+	<body>
+		<header th:replace="fragments/baseUser.html::header"></header>
+		
+		<div id="flex-container">
+			<form th:action="@{/updateUser}" method="POST" id="form">
+				<h2>USER DETAILS</h2>
+				<h4>Nome</h4>
+				<input type="text" th:field="${user.nome}" name="nome" class="box" th:placeholder="${user.nome}" required />
+				<div th:if="${#fields.hasErrors('user.nome')}" th:errors="${user.nome}" th:style="'color:red'"></div>
+				<h4>Cognome</h4>
+				<input type="text" th:field="${user.cognome}" name="cognome" class="box" th:placeholder="${user.cognome}" required />
+				<div th:if="${#fields.hasErrors('user.cognome')}" th:errors="${user.cognome}" th:style="'color:red'"></div>
+				<h4>Username</h4>
+				<input type="text" th:field="${credentials.username}" name="username" class="box" th:placeholder="${credentials.username}" required />
+				<div th:if="${#fields.hasErrors('credentials.username')}" th:errors="${credentials.username}" th:style="'color:red'"></div>
+				<h4>Password</h4>
+				<input type="password" th:field="${credentials.password}" name="password" class="box" required />
+				<div th:if="${#fields.hasErrors('credentials.password')}" th:errors="${credentials.password}" th:style="'color:red'"></div>
+				<button type="submit" id="submit">MODIFICA</button>
+			</form>
+		</div>
+	
+	</body>
+</html>

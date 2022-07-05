@@ -58,7 +58,11 @@ public class CredentialsService {
 	
 	public Optional<Credentials> findByUser(User user) {
 		return this.credentialsRepository.findByUser(user);
-
+	}
+	
+	public Credentials findCredentialsByUser_Id(Long id) {
+		Credentials credentials = this.credentialsRepository.findCredentialsByUser_Id(id);
+		return credentials;
 	}
 	
 }
