@@ -22,7 +22,7 @@ public class Buffet {
 	private Long id;
 	
 	@Column(unique = true)
-	@NotBlank
+	//@NotBlank
 	private String nome;
 	
 	private String descrizione;
@@ -30,8 +30,8 @@ public class Buffet {
 	@ManyToOne
 	private Chef chef;
 	
-	@OneToMany//(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-	@JoinColumn(name = "buffet_id")
+	@OneToMany(mappedBy = "buffet")//(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+	//@JoinColumn(name = "buffet_id")
 	private List<Piatto> piatti;
 	
 	public Buffet() {

@@ -50,6 +50,7 @@ body {
   border-collapse: collapse;
   height: 170px;
   width: 450px;
+  margin-left: 2rem;
 }
 
 #buffets td, #buffets th {
@@ -75,6 +76,7 @@ body {
 }
 
 #section h2 {
+	margin-left: 2rem;
 	margin-bottom: -1px;
 }
 

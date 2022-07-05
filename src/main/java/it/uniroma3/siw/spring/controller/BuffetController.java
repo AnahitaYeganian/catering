@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import it.uniroma3.siw.spring.controller.validator.BuffetValidator;
 import it.uniroma3.siw.spring.model.Buffet;
-import it.uniroma3.siw.spring.model.Credentials;
-import it.uniroma3.siw.spring.model.User;
 import it.uniroma3.siw.spring.service.BuffetService;
 
 @Controller
@@ -40,7 +38,7 @@ public class BuffetController {
     public String getAdminBuffets(Model model) {
     	List<Buffet> buffets = buffetService.findAll();
 		model.addAttribute("buffets", buffets);
-		return "adminBuffets.html";
+		return "admin/buffets.html";
     }
     
     @GetMapping("/updateBuffet/{id}")
@@ -49,7 +47,7 @@ public class BuffetController {
     	
 		model.addAttribute("buffet", buffet);
 		session.setAttribute("currentBuffet", buffet);
-		return "buffetDetailsForm.html";
+		return "admin/buffetDetailsForm.html";
 	}
 	
 	@PostMapping("/updateBuffet")
@@ -66,10 +64,10 @@ public class BuffetController {
         	this.buffetService.saveBuffet(currentBuffet);
             //model.addAttribute("modificaAvvenuta", new String("L'utente inserito è stato registrato"));
         	model.addAttribute("buffets", this.buffetService.findAll());
-            return "adminBuffets.html";
+            return "admin/buffets.html";
         }
         
-        return "buffetDetailsForm.html";
+        return "admin/buffetDetailsForm.html";
     }
     
 }

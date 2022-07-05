@@ -3,12 +3,14 @@ package it.uniroma3.siw.spring.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 
@@ -24,6 +26,9 @@ public class Piatto {
 	private String nome;
 	
 	private String descrizione;
+	
+	@ManyToOne
+	private Buffet buffet;
 	
 	@OneToMany
 	@JoinColumn(name = "piatto_id")
@@ -65,6 +70,14 @@ public class Piatto {
 		this.ingredienti = ingredienti;
 	}
 	
+	public Buffet getBuffet() {
+		return this.buffet;
+	}
+
+	public void setBuffet(Buffet buffet) {
+		this.buffet = buffet;
+	}
+
 	@Override
 	public int hashCode() {
 		return this.getNome().hashCode();
