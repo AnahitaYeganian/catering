@@ -75,7 +75,6 @@ public class UserController {
         this.credentialsValidator.validate(credentials, credentialsBindingResult);
 
         if(!userBindingResult.hasErrors() && ! credentialsBindingResult.hasErrors()) {
-        	
         	User currentUser = (User)session.getAttribute("currentUser");
         	Credentials currentCredentials = (Credentials)session.getAttribute("currentCredentials");
         	
@@ -86,7 +85,7 @@ public class UserController {
         	
         	//currentCredentials.setUser(currentUser); non serve
             this.userService.getCredentialsService().saveCredentials(currentCredentials);
-            model.addAttribute("modificaAvvenuta", new String("L'utente inserito è stato registrato"));
+            //model.addAttribute("modificaAvvenuta", new String("L'utente inserito è stato registrato"));
             return "home.html";
         }
         

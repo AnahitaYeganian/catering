@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/baseAdmin.html::head(title='Buffets')"></head>
+	
+	<body>
+		<header th:replace="fragments/baseAdmin.html::header"></header>
+		
+		<div id="section">
+			<h2>Buffets</h2>
+			<table id="buffets">
+				<tr>
+					<th>Nome</th>
+					<th>Descrizione</th>
+					<th>Opzioni<th>
+				</tr>
+				<tr th:each="buffet : ${buffets}">
+					<td th:text="${buffet.nome}">
+					</td>
+					
+					<td th:text="${buffet.descrizione}">
+					</td>
+					
+					<td>
+						<div class="dropdown">
+							<button class="dropbtn">&#9660;</button>
+							<div class="dropdown-content">
+								<a th:href="@{'/buffet' + '/chef' + '/' + ${buffet.chef.id}}" th:text="Chef">Chef</a>
+								<a th:href="@{'/buffet' + '/piatto' + '/' + ${buffet.id}}" th:text="Piatti">Piatti</a>
+								<a th:href="@{'/updateBuffet' + '/' + ${buffet.id}}" th:text="Modifica">Modifica</a>
+							</div>
+						</div>
+					</td>
+					
+				</tr>
+			</table>
+		</div>
+	
+	</body>
+</html>

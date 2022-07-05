@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/baseAdmin.html::head(title='Buffet Details')"></head>
+	
+	<body>
+		<header th:replace="fragments/baseAdmin.html::header"></header>
+		
+		<div id="flex-container">
+			<form th:action="@{/updateBuffet}" method="POST" id="form">
+				<h2>BUFFET DETAILS</h2>
+				<h4>Nome</h4>
+				<input type="text" th:field="${buffet.nome}" name="nome" class="box" th:placeholder="${buffet.nome}" required />
+				<div th:if="${#fields.hasErrors('buffet.nome')}" th:errors="${buffet.nome}" th:style="'color:red'"></div>
+				<h4>Descrizione</h4>
+				<input type="text" th:field="${buffet.descrizione}" name="descrizione" class="box" th:placeholder="${buffet.descrizione}" required />
+				<div th:if="${#fields.hasErrors('buffet.descrizione')}" th:errors="${buffet.descrizione}" th:style="'color:red'"></div>
+				<button type="submit" id="submit">MODIFICA</button>
+			</form>
+		</div>
+	
+	</body>
+</html>
