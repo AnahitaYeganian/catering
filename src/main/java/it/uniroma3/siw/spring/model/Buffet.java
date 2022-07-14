@@ -8,21 +8,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-//@Table(uniqueConstraints=@UniqueConstraint(columnNames={"nome","chef"}))
 public class Buffet {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	@NotBlank
 	@Column(unique = true)
-	//@NotBlank
 	private String nome;
 	
 	private String descrizione;
@@ -30,8 +28,7 @@ public class Buffet {
 	@ManyToOne
 	private Chef chef;
 	
-	@OneToMany(mappedBy = "buffet")//(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-	//@JoinColumn(name = "buffet_id")
+	@OneToMany(mappedBy = "buffet")
 	private List<Piatto> piatti;
 	
 	public Buffet() {

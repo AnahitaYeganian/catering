@@ -8,7 +8,6 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import it.uniroma3.siw.spring.model.Buffet;
 import it.uniroma3.siw.spring.model.Piatto;
 import it.uniroma3.siw.spring.repository.PiattoRepository;
 

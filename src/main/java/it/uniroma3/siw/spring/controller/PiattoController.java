@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import it.uniroma3.siw.spring.controller.validator.PiattoValidator;
 import it.uniroma3.siw.spring.model.Piatto;
-import it.uniroma3.siw.spring.service.BuffetService;
 import it.uniroma3.siw.spring.service.PiattoService;
 
 @Controller
@@ -26,9 +25,6 @@ public class PiattoController {
 	
     @Autowired
     private PiattoValidator piattoValidator;
-    
-    @Autowired
-    private BuffetService buffetService;
     
     @GetMapping("buffet/piatto/{id}")
     public String getPiattiPerBuffet(@PathVariable("id") Long id, Model model) {

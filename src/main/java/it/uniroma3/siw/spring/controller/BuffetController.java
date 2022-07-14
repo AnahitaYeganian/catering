@@ -69,5 +69,5 @@ public class BuffetController {
         
         return "admin/buffetDetailsForm.html";
     }
-    
+	
 }
